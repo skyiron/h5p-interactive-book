@@ -355,7 +355,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
      * @param {Array} chapters
      * @return {boolean}
      */
-    this.hasChaptersTasks = chapters => chapters.filter(chapter => chapter.sections.filter(section => (section.isTask === true || (section.content.metadata.contentType === 'Row'))).length > 0).length > 0;
+    this.hasChaptersTasks = chapters => chapters.filter(chapter => chapter.sections.filter(section => section.isTask === true).length > 0).length > 0;
 
     /**
      * Check if there are valid chapters.
@@ -1022,7 +1022,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
     });
     this.chapters = this.pageContent.getChapters();
 
-    this.sideBar = new SideBar(this.params, contentId, this);
+    this.sideBar = new SideBar(this.params, contentId, contentData.metadata.title, this, this.chapters);
 
     // Set progress (from previous state);
     this.chapters.forEach((chapter, index) => {
@@ -1128,7 +1128,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
 
     config.chapters = config.chapters
       .map(chapter => {
-        chapter.params.content = chapter.params.content.filter(content => content.content);
+        chapter.params.content = chapter.params.content?.filter(content => content.content);
         return chapter;
       })
       .filter(chapter => chapter.params.content && chapter.params.content.length > 0);
