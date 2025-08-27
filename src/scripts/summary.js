@@ -718,10 +718,13 @@ class Summary extends H5P.EventDispatcher {
     // fullscreen. The attach/detach logic is centralized in helper
     // methods so that it can be triggered from fullscreen events.
     this._setProgressScrollAttached(false);
-
     this._progressScrollTarget = this._findScrollParent(this.wrapper);
-    this._scrollStartFired = false;
-    const THRESHOLD_TOP = 8; // Arbitrary threshold to determine if the user has scrolled back to the top
+
+    const FADE_IN_THRESHOLD = 8; // Arbitrary threshold to determine if the user has scrolled back to top
+    const FADE_OUT_THRESHOLD = 32; // Arbitrary threshold to determine if the user has scrolled down
+
+    // Initial state: visible
+    this.fadeProgressContainer('in');
 
     // Define handler once and reuse when attaching/detaching
     this._progressScrollHandler = () => {
@@ -739,18 +742,18 @@ class Summary extends H5P.EventDispatcher {
       }
 
       // If user scrolls back to top, show container
-      if (scrollTop <= THRESHOLD_TOP) {
-        this._scrollStartFired = false;
+      if (scrollTop <= FADE_IN_THRESHOLD) {
         this.fadeProgressContainer('in');
         return;
       }
 
-      // On first scroll event after idle, call fadeProgressContainer('out')
-      if (!this._scrollStartFired) {
-        this._scrollStartFired = true;
-        this.fadeProgressContainer('out');
+      // Stay visible between FADE_IN_THRESHOLD and FADE_OUT_THRESHOLD scroll distance
+      if (scrollTop < FADE_OUT_THRESHOLD) {
+        this.fadeProgressContainer('in');
         return;
       }
+
+      this.fadeProgressContainer('out');
     };
 
     // If the IB is already fullscreen when this summary page is added,
