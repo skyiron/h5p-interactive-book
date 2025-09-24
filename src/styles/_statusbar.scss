@@ -231,20 +231,21 @@
   }
 }
 
-.h5p-interactive-book-small.h5p-interactive-book-navigation-open .h5p-interactive-book-status .h5p-interactive-book-status-main {
-  display: none;
-}
-.h5p-interactive-book-small.h5p-interactive-book-navigation-open .h5p-interactive-book-status {
+.h5p-interactive-book-small.h5p-interactive-book-navigation-open:not(.h5p-interactive-book-navigation-hidden) .h5p-interactive-book-status {
   grid-template-columns: 1fr;
+
+  .h5p-interactive-book-status-main {
+    display: none;
+  }
+
+  .h5p-interactive-book-status-side {
+    width: calc(100% - 2*var(--h5p-theme-spacing-s));
+  }
 }
 
-.h5p-interactive-book-small.h5p-interactive-book-navigation-open .h5p-interactive-book-status .h5p-interactive-book-status-side {
-  width: calc(100% - 2*var(--h5p-theme-spacing-s));
-}
-
-// Expand side in footer and if nav menu is expanded
-.h5p-interactive-book-status-side:has(.h5p-interactive-book-status-menu-active),
-.h5p-interactive-book-navigation-open ~ .h5p-interactive-book-status .h5p-interactive-book-status-side {
+// Expand side in footer and header if nav menu is expanded
+// Prevent edge case where both open and hidden classes are applied
+.h5p-interactive-book-navigation-open:not(.h5p-interactive-book-navigation-hidden) .h5p-interactive-book-status .h5p-interactive-book-status-side {
   width: calc(calc(var(--h5p-theme-spacing-xl)*5.5) - calc(2*var(--h5p-theme-spacing-s)));
   padding: var(--h5p-theme-spacing-s);
   box-shadow: 0.625em 0.625em 1.875em rgba(166, 166, 166, 0.2);
