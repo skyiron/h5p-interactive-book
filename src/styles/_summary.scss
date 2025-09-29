@@ -55,11 +55,16 @@
   .h5p-interactive-box-summary-progress {
     display: flex;
     justify-content: space-between;
+    gap: 1em;
     color: #273C59;
     margin-top: calc(-1 * var(--h5p-theme-spacing-xl)*2);
     position: sticky;
     top: calc(var(--h5p-theme-spacing-xl)*2);
     z-index: 151; // Ensure it is above the header
+
+    @media (max-width: 1000px) {
+    flex-direction: column; 
+    }
     
     &.fade-in {
       opacity: 1;
@@ -73,13 +78,12 @@
     .h5p-interactive-book-summary-progress-container {
       background-color: var(--h5p-theme-ui-base);
       box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.08);
-      width: 49%;
       padding: var(--h5p-theme-spacing-s);
       box-sizing: border-box;
       border-radius: 5px;
+      flex: 1;
       display: flex;
       align-items: center;
-      margin-right: 1em;
 
       .absolute-value {
         color: var(--h5p-theme-text-secondary);
@@ -91,10 +95,6 @@
         font-size: 0.75em;
         margin: auto 0.2em;
         vertical-align: top;
-      }
-
-      &:last-child {
-        margin-right: 0;
       }
     }
 
