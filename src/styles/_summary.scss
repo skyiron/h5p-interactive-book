@@ -1,4 +1,6 @@
 .h5p-interactive-book {
+  container-type: inline-size;
+  container-name: summary-page;
   
   &.h5p-interactive-book-small {
     .h5p-interactive-box-summary-progress {
@@ -33,6 +35,13 @@
   margin: 0.7rem auto;
 }
 
+/* Stack summary boxes vertically if container < ~1000px to avoid squishing */
+@container summary-page (max-width: 1000px) {
+  .h5p-interactive-box-summary-progress {
+    flex-direction: column;
+  }
+}
+
 .h5p-theme-show-results {
   &[data-book-completed="true"],
   &:active {
@@ -43,7 +52,6 @@
 }
 
 .h5p-interactive-book-summary-page {
-   container-type: inline-size;
   background-color: var(--h5p-theme-ui-base);
   padding: var(--h5p-theme-spacing-xl);
 
@@ -51,12 +59,6 @@
   ul,
   li {
     padding-left: 0;
-  }
-  /* Stack summary boxes vertically if container < ~1000px to avoid squishing */
-  @container summary-page (max-width: 1000px) {
-    .h5p-interactive-box-summary-progress {
-      flex-direction: column;
-    }
   }
 
   .h5p-interactive-box-summary-progress {
@@ -68,10 +70,6 @@
     position: sticky;
     top: calc(var(--h5p-theme-spacing-xl)*2);
     z-index: 151; // Ensure it is above the header
-
-    @media (max-width: 1000px) {
-    flex-direction: column; 
-    }
     
     &.fade-in {
       opacity: 1;
