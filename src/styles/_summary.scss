@@ -43,6 +43,7 @@
 }
 
 .h5p-interactive-book-summary-page {
+   container-type: inline-size;
   background-color: var(--h5p-theme-ui-base);
   padding: var(--h5p-theme-spacing-xl);
 
@@ -51,11 +52,17 @@
   li {
     padding-left: 0;
   }
+  /* Stack summary boxes vertically if container < ~1000px to avoid squishing */
+  @container summary-page (max-width: 1000px) {
+    .h5p-interactive-box-summary-progress {
+      flex-direction: column;
+    }
+  }
 
   .h5p-interactive-box-summary-progress {
     display: flex;
     justify-content: space-between;
-    gap: 1em;
+    gap: 1rem;
     color: #273C59;
     margin-top: calc(-1 * var(--h5p-theme-spacing-xl)*2);
     position: sticky;
