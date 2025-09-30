@@ -1,6 +1,6 @@
 .h5p-interactive-book {
   container-type: inline-size;
-  container-name: summary-page;
+  container-name: interactive-book;
   
   &.h5p-interactive-book-small {
     .h5p-interactive-box-summary-progress {
@@ -36,7 +36,7 @@
 }
 
 /* Stack summary boxes vertically if container < ~1000px to avoid squishing */
-@container summary-page (max-width: 1000px) {
+@container interactive-book (max-width: 1000px) {
   .h5p-interactive-box-summary-progress {
     flex-direction: column;
   }
