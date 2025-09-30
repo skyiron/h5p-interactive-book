@@ -1,7 +1,7 @@
 .h5p-interactive-book {
   container-type: inline-size;
   container-name: interactive-book;
-  
+
   &.h5p-interactive-book-small {
     .h5p-interactive-box-summary-progress {
       display: block;
@@ -23,7 +23,7 @@
 
   .h5p-interactive-book-summary-buttons {
     display: flex;
-    
+
     .h5p-theme-primary-cta.h5p-theme-show-results{
       margin-right: 0.5em;
     }
@@ -70,7 +70,7 @@
     position: sticky;
     top: calc(var(--h5p-theme-spacing-xl)*2);
     z-index: 151; // Ensure it is above the header
-    
+
     &.fade-in {
       opacity: 1;
       transition: opacity 0.2s ease-in;
@@ -153,7 +153,7 @@
         flex: 1;
       }
     }
-    
+
     &.submitted {
       & > button {
         display: none;
@@ -168,7 +168,7 @@
         }
         margin-right: 0.5rem;
       }
-      
+
       .h5p-interactive-book-summary-restart-button {
         display: inline-block;
       }
@@ -325,7 +325,7 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 3rem;
-    display: none; 
+    display: none;
   }
 
   .h5p-interactive-book-summary-no-chapter-interactions {
