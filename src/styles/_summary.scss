@@ -35,7 +35,7 @@
   margin: 0.7rem auto;
 }
 
-/* Stack summary boxes vertically if container < ~1000px to avoid squishing */
+/* Stack summary boxes vertically if container < ~1000px (no specific reason for 1000 exactly) to avoid squishing */
 @container interactive-book (max-width: 1000px) {
   .h5p-interactive-box-summary-progress {
     flex-direction: column;
