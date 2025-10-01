@@ -35,13 +35,6 @@
   margin: 0.7rem auto;
 }
 
-/* Stack summary boxes vertically if container < ~1029px (breakpoint made through ratio in js) to avoid squishing */
-@container interactive-book (max-width: 1029px) {
-  .h5p-interactive-box-summary-progress {
-    flex-direction: column;
-  }
-}
-
 .h5p-theme-show-results {
   &[data-book-completed="true"],
   &:active {
@@ -70,15 +63,6 @@
     position: sticky;
     top: calc(var(--h5p-theme-spacing-xl)*2);
     z-index: 151; // Ensure it is above the header
-
-    &.fade-in {
-      opacity: 1;
-      transition: opacity 0.2s ease-in;
-    }
-    &.fade-out {
-      opacity: 0;
-      transition: opacity 0.2s ease-out;
-    }
 
     .h5p-interactive-book-summary-progress-container {
       background-color: var(--h5p-theme-ui-base);
@@ -443,3 +427,31 @@
 .h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status .h5p-interactive-book-status-side {
   align-items: flex-start;
 }
+
+/* Stack summary boxes vertically if container < ~1029px (breakpoint made through ratio in js) to avoid squishing */
+@container interactive-book (max-width: 1029px) {
+  .h5p-fullscreen {
+    .h5p-interactive-box-summary-progress {
+      position: inherit;
+      margin-top: initial;
+    }
+  }
+  .h5p-interactive-box-summary-progress {
+    flex-direction: column;
+  }
+}
+
+/* Only apply fade transitions when container >= 1030px */
+@container interactive-book (min-width: 1030px) {
+  .h5p-fullscreen .h5p-interactive-box-summary-progress {
+    &.fade-in {
+      opacity: 1;
+      transition: opacity 0.2s ease-in;
+    }
+    &.fade-out {
+      opacity: 0;
+      transition: opacity 0.2s ease-out;
+    }
+  }
+}
+
