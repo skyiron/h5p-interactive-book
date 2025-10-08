@@ -24,13 +24,6 @@
     opacity: 0;
     transition: opacity .05s linear;
   }
-
-  .large-navigation-list {
-    height: 0;
-    overflow-y: auto;
-    flex: 1 1 auto;
-    min-height: 58em;
-  }
 }
 
 .h5p-interactive-book-navigation-sectionlist {
@@ -108,7 +101,7 @@
 
 .h5p-theme-show-results.h5p-interactive-book-navigation-chapter-button {
   width: 100%;
-  margin-top: var(--h5p-theme-spacing-s);
+  margin: var(--h5p-theme-spacing-s) 0;
 }
 
 .h5p-interactive-book-navigation-chapter-button {
