@@ -110,6 +110,7 @@
   .h5p-interactive-book-summary-buttons {
     margin-top: var(--h5p-theme-spacing-l);
     flex-wrap: wrap;
+    align-items: center;
 
     .h5p-interactive-book-summary-submitted {
       opacity: 0;
