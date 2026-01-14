@@ -12,8 +12,8 @@
           "description": "Besedilo opisuje vsebino knjige."
         },
         {
-          "label": "Medij naslovne strani",
-          "description": "Neobvezen medij za dodaten opis vsebine knjige."
+          "label": "Medijska vsebina naslovne strani",
+          "description": "Neobvezna dodatna medijska vsebina za opis knjige."
         }
       ]
     },
@@ -39,11 +39,11 @@
       "fields": [
         {
           "label": "Osnovna barva",
-          "description": "Določitev osnovne barve za celotno barvno shemo knjige. Zagotovite dovolj visok kontrast."
+          "description": "Določitev osnovne barve za celotno barvno shemo knjige. Zagotoviti je treba dovolj visok kontrast."
         },
         {
           "label": "Kazalo vsebin prikaži privzeto",
-          "description": "Omogočena nastavitev kazalo vsebin prikaže ob odprtju knjige."
+          "description": "Omogočena nastavitev prikaže kazalo vsebine ob odprtju knjige."
         },
         {
           "label": "Prikaži indikatorje napredovanja",
@@ -58,8 +58,8 @@
           "description": "Udeležencem se na dodatni strani prikaže povzetek interakcij oz. napredovanja."
         },
         {
-          "label": "Enable \"Restart\" button",
-          "description": "When enabled the user can initiate a restart on the summary page."
+          "label": "Omogoči gumb \"Poskusi ponovno\"",
+          "description": "Udeleženci lahko na strani s povzetkom sprožijo ponovni zagon vsebine."
         }
       ]
     },
