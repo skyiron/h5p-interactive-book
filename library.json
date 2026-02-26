@@ -19,17 +19,11 @@
   "preloadedJs": [
     {
       "path": "dist/h5p-interactive-book.js"
-    },
-    {
-      "path": "@legacy/dist/h5p-interactive-book.js"
     }
   ],
   "preloadedCss": [
     {
       "path": "dist/h5p-interactive-book.css"
-    },
-    {
-      "path": "@legacy/dist/h5p-interactive-book.css"
     }
   ],
   "preloadedDependencies": [
